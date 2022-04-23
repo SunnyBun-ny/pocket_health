@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_health/reg_screen.dart';
+import 'package:flutter/services.dart';
+import 'package:pocket_health/home_screen.dart';
+import 'package:pocket_health/login_screen.dart';
+import 'package:pocket_health/animated_image.dart';
 
 class FirstScreen extends StatelessWidget {
   // var MQ;
@@ -13,19 +16,11 @@ class FirstScreen extends StatelessWidget {
       required this.usableHeight,
       required this.usableWidth});
 
-  // void RegistrationScreen(BuildContext ctx) {
-  //   Navigator.of(ctx).push(
-  //     MaterialPageRoute(
-  //       builder: (_) {
-  //         // return RegScreen(
-  //         //   MQ: MQ,
-  //         //   usableHeight: usableHeight,
-  //         //   usableWidth: usableWidth,
-  //         // );
-  //       },
-  //     ),
-  //   );
-  // }
+  void LoginScreen(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      LoginPage.routeName,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,12 +69,21 @@ class FirstScreen extends StatelessWidget {
                 fit: BoxFit.scaleDown),
           ),
           SizedBox(
-            height: usableHeight * 0.49,
+            height: usableHeight * 0.039,
+          ),
+          // Container(
+          //     padding: EdgeInsets.all(0),
+          //     height: 250,
+          //     child: Image.asset("assets/img/yogaWoman.png",
+          //         fit: BoxFit.scaleDown)),
+          AnimatedImage(),
+          SizedBox(
+            height: usableHeight * 0.049,
           ),
           FlatButton(
               child: Image.asset('assets/img/buttonText.png',
                   fit: BoxFit.scaleDown),
-              onPressed: () {},
+              onPressed: () => LoginScreen(context),
               color: Color.fromRGBO(248, 96, 96, 1),
               height: usableHeight * 0.070,
               minWidth: usableWidth * 0.90,

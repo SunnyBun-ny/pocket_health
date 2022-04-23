@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_health/first_screen.dart';
+import '/first_screen.dart';
+import 'package:pocket_health/home_screen.dart';
+import 'package:pocket_health/login_screen.dart';
 
 void main() => runApp(MaterialApp(home: MyApp()));
 
@@ -18,6 +20,10 @@ class MyAppState extends State<MyApp> {
         MQ.size.height - MQ.viewPadding.top - MQ.viewPadding.bottom;
     final double usableWidth = MQ.size.width;
     return MaterialApp(
+      routes: {
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+        LoginPage.routeName: (ctx) => LoginPage(),
+      },
       theme: ThemeData(
         primaryColor: Color.fromRGBO(246, 181, 120, 1),
         backgroundColor: Color.fromRGBO(246, 181, 120, 1),
