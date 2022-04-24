@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '/first_screen.dart';
-import 'package:pocket_health/home_screen.dart';
+import 'home_screen.dart';
 import 'package:pocket_health/login_screen.dart';
 
 void main() => runApp(MaterialApp(home: MyApp()));

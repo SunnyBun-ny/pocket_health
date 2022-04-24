@@ -2,7 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:pocket_health/signup_screen.dart';
 import 'home_screen.dart';
+import 'package:provider/provider.dart';
+import 'home_bottom_bar.dart';
 
 class LoginPage extends StatefulWidget {
   static const String routeName = '/login-screen';
@@ -92,6 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print('build called');
     // Size size = MediaQuery.of(context).size;
     return MaterialApp(
       home: Scaffold(
@@ -163,9 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               padding: const EdgeInsets.all(4.0),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(28.0)),
-                              onPressed: () {
-                                _showButtonPressDialog(context, 'Google');
-                              },
+                              onPressed: () {},
                             ),
                           ),
                         ],
@@ -234,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           if (user != null) {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (context) => HomeScreen()));
+                                    builder: (context) => HomeBottomBar()));
                           }
                         },
                         child: const Text(
@@ -248,6 +250,30 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Divider(),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Text(
+                        "Dont have an account?",
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                      GestureDetector(
+                        child: const Text(
+                          " Sign up",
+                          style: TextStyle(
+                            color: Colors.blueAccent,
+                            fontSize: 14.0,
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpScreen()));
+                        },
+                      ),
+                    ]),
                     GestureDetector(
                       onTap: () => _toHomeScreen(context),
                       child: Container(

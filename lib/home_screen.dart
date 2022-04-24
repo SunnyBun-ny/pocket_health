@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_health/home_bottom_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/profile-screen';
@@ -133,5 +134,9 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget buildProfileView() {
+    return HomeBottomBar();
   }
 }

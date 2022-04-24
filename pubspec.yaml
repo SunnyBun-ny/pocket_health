@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  
   flutter:
     sdk: flutter
 
@@ -36,8 +37,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^1.15.0
   firebase_auth: ^3.3.15
-  
   flutter_signin_button: ^2.0.0
+  provider: ^6.0.0
+  curved_navigation_bar: ^1.0.3
+  google_sign_in: ^5.3.0
+  flutter_ringtone_player: ^3.2.0
+  survey_kit: ^0.0.21
+ 
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +55,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -64,6 +71,16 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/
+    - assets/icons/google.png
+    - assets/Welcome_Back.png
+    - assets/meditate_bg.png
+    - assets/user_animated.png
+    - assets/user_profile animate resized.png
+    - assets/icons/user.png
+    - assets/logo/phlogo.png
+    - assets/icons/home.png
+    - assets/sound/
+    - assets/survey/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -78,9 +95,12 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Acme
+    - family : Acme
       fonts:
-        - asset: assets/fonts/Acme-Regular.ttf
+        - asset: fonts/Acme-Regular.ttf
+    - family : CustomIcons
+      fonts:
+        - asset: fonts/CustomIcons.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
